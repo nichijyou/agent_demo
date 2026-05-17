@@ -6,10 +6,16 @@ from typing import Any
 
 @dataclass
 class TraceNode:
+    span_id: str
+    parent_id: str | None
     name: str
     kind: str
-    inputs: dict[str, Any]
-    outputs: dict[str, Any] = field(default_factory=dict)
+    input: dict[str, Any]
+    output: dict[str, Any] = field(default_factory=dict)
+    start_time: str = ""
+    end_time: str = ""
+    duration_ms: float = 0.0
+    error: str | None = None
     children: list["TraceNode"] = field(default_factory=list)
 
     def add_child(self, child: "TraceNode") -> None:
@@ -45,6 +51,7 @@ class EvalResult:
     passed: bool
     score: float
     notes: list[str]
+    trace: TraceNode
 
 
 @dataclass
@@ -54,3 +61,10 @@ class EvalSummary:
     score: float
     results: list[EvalResult]
 
+
+@dataclass
+class Diagnosis:
+    case_id: str
+    root_cause: str
+    evidence: list[str]
+    suggestion: list[str]

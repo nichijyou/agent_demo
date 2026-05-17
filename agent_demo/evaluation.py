@@ -22,10 +22,17 @@ def load_eval_cases(path: Path) -> list[EvalCase]:
     return cases
 
 
-def evaluate_dataset(cases: list[EvalCase]) -> EvalSummary:
+def find_case(cases: list[EvalCase], case_id: str) -> EvalCase:
+    for case in cases:
+        if case.id == case_id:
+            return case
+    raise ValueError(f"Unknown case id: {case_id}")
+
+
+def evaluate_dataset(cases: list[EvalCase], fix: bool = False) -> EvalSummary:
     results = []
     for case in cases:
-        agent_result = run_agent(case.bug_report)
+        agent_result = run_agent(case.bug_report, fix=fix)
         notes = []
         checks = 0
         passed_checks = 0
@@ -53,10 +60,10 @@ def evaluate_dataset(cases: list[EvalCase]) -> EvalSummary:
                 passed=score == 1.0,
                 score=score,
                 notes=notes or ["all checks passed"],
+                trace=agent_result.trace,
             )
         )
 
     passed = sum(1 for result in results if result.passed)
     score = sum(result.score for result in results) / len(results)
     return EvalSummary(total=len(results), passed=passed, score=score, results=results)
-

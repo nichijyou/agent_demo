@@ -25,6 +25,14 @@
     },
     "expected_classification": "performance",
     "expected_contains": ["Cache", "hot path"]
+  },
+  {
+    "id": "fastapi_422",
+    "bug_report": {
+      "title": "FastAPI returns 422 when I send a POST request with JSON.",
+      "body": "FastAPI returns 422 when I send a POST request with JSON."
+    },
+    "expected_classification": "fastapi_validation_error",
+    "expected_contains": ["validation", "schema"]
   }
 ]
-

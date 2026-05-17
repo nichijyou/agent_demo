@@ -1,5 +1,7 @@
 __pycache__/
 *.py[cod]
 .env
+.venv/
+.test_deps/
 agent_demo/reports/latest_report.md
 agent_demo/traces/latest_trace.json
