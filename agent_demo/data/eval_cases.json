@@ -1,20 +1,20 @@
 [
   {
-    "id": "none-handling-001",
+    "id": "none_handling_001",
     "bug_report": {
       "title": "AttributeError when user profile is missing",
       "body": "The endpoint crashes with 'NoneType' object has no attribute 'email'."
     },
-    "expected_classification": "none-handling",
+    "expected_classification": "none_handling",
     "expected_contains": ["None guard", "optional values"]
   },
   {
-    "id": "bounds-check-001",
+    "id": "bounds_check_001",
     "bug_report": {
       "title": "IndexError in CSV parser",
       "body": "The parser raises list index out of range on empty rows."
     },
-    "expected_classification": "bounds-check",
+    "expected_classification": "bounds_check",
     "expected_contains": ["length", "indexing"]
   },
   {

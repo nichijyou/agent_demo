@@ -48,16 +48,16 @@ tests/
 
 ## Run Commands
 
-Run the full default demo:
-
-```bash
-python -m agent_demo.main
-```
-
 Run the intentional FastAPI 422 failure:
 
 ```bash
 python -m agent_demo.main --case fastapi_422
+```
+
+Run the full default demo:
+
+```bash
+python -m agent_demo.main
 ```
 
 Run the same case after the classifier fix:
@@ -160,10 +160,10 @@ Everything is deliberately tiny and inspectable:
 
 ## Five-Minute Live Demo Script
 
-1. Run `python -m agent_demo.main` and show the full workflow.
+1. Run `python -m agent_demo.main --case fastapi_422` and show the failure.
 2. Open `agent_demo/traces/latest_trace.json` and point to span structure.
-3. Run `python -m agent_demo.main --case fastapi_422` and show the failure.
-4. Read the diagnosis: wrong classifier output caused the wrong tool path.
-5. Run `python -m agent_demo.main --case fastapi_422 --fix` and show the pass.
+3. Read the diagnosis: wrong classifier output caused the wrong tool path.
+4. Run `python -m agent_demo.main --case fastapi_422 --fix` and show the pass.
+5. Run `python -m agent_demo.main` and show the full workflow.
 6. Run `python -m agent_demo.main --report` and open the Markdown report.
 7. Close with the punchline: debugging agents starts with tracing the path.

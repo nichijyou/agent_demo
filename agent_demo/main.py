@@ -31,6 +31,11 @@ def main() -> None:
     diagnoses = diagnose(summary)
     write_report(REPORT_PATH, agent_result, summary, diagnoses)
 
+    if args.report and not args.eval and not selected_case:
+        print("REPORT WRITTEN")
+        print(f"REPORT PATH: {REPORT_PATH}")
+        return
+
     if not args.eval and not args.report:
         print_final_answer(agent_result.final_answer)
         print_trace(agent_result.trace)
