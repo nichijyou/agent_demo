@@ -1,0 +1,30 @@
+[
+  {
+    "id": "none-handling-001",
+    "bug_report": {
+      "title": "AttributeError when user profile is missing",
+      "body": "The endpoint crashes with 'NoneType' object has no attribute 'email'."
+    },
+    "expected_classification": "none-handling",
+    "expected_contains": ["None guard", "optional values"]
+  },
+  {
+    "id": "bounds-check-001",
+    "bug_report": {
+      "title": "IndexError in CSV parser",
+      "body": "The parser raises list index out of range on empty rows."
+    },
+    "expected_classification": "bounds-check",
+    "expected_contains": ["length", "indexing"]
+  },
+  {
+    "id": "performance-001",
+    "bug_report": {
+      "title": "Slow report generation",
+      "body": "Rendering times out because the same aggregation repeats in a loop."
+    },
+    "expected_classification": "performance",
+    "expected_contains": ["Cache", "hot path"]
+  }
+]
+

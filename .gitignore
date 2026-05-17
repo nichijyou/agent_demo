@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+.env
+agent_demo/reports/latest_report.md
+agent_demo/traces/latest_trace.json
