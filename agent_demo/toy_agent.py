@@ -27,12 +27,20 @@ def run_agent(report: BugReport, fix: bool = False) -> AgentResult:
     with tracer.span(
         "classify_bug_tool",
         "tool",
-        {"title": report.title, "body": report.body, "fix": fix},
+        {
+            "title": report.title,
+            "body": report.body,
+            "fix": fix,
+        },
     ) as span:
         classification = classify_bug_tool(report.title, report.body, fix=fix)
         span.output["classification"] = classification
 
-    with tracer.span("search_known_issue_tool", "tool", {"classification": classification}) as span:
+    with tracer.span(
+        "search_known_issue_tool",
+        "tool",
+        {"classification": classification},
+    ) as span:
         known_issue = search_known_issue_tool(classification)
         span.output["known_issue"] = known_issue
 

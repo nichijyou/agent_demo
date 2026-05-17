@@ -48,11 +48,28 @@ def main() -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Deterministic PyCon agent tracing demo.")
-    parser.add_argument("--case", help="Run one eval case by id, for example fastapi_422.")
-    parser.add_argument("--fix", action="store_true", help="Enable the fixed classifier rule.")
-    parser.add_argument("--eval", action="store_true", help="Run the full dataset evaluation.")
-    parser.add_argument("--report", action="store_true", help="Generate the Markdown report.")
+    parser = argparse.ArgumentParser(
+        description="Deterministic PyCon agent tracing demo."
+    )
+    parser.add_argument(
+        "--case",
+        help="Run one eval case by id, for example fastapi_422.",
+    )
+    parser.add_argument(
+        "--fix",
+        action="store_true",
+        help="Enable the fixed classifier rule.",
+    )
+    parser.add_argument(
+        "--eval",
+        action="store_true",
+        help="Run the full dataset evaluation.",
+    )
+    parser.add_argument(
+        "--report",
+        action="store_true",
+        help="Generate the Markdown report.",
+    )
     return parser.parse_args()
 
 
@@ -77,7 +94,11 @@ def print_trace(trace: object) -> None:
 
 def print_evaluation(summary: object) -> None:
     print("DATASET EVALUATION")
-    print(f"cases={summary.total} passed={summary.passed} average_score={summary.score:.2f}")
+    print(
+        f"cases={summary.total} "
+        f"passed={summary.passed} "
+        f"average_score={summary.score:.2f}"
+    )
     for result in summary.results:
         status = "PASS" if result.passed else "FAIL"
         print(f"- {result.case_id}: {status} score={result.score:.2f}")

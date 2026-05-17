@@ -13,8 +13,13 @@ def test_default_fastapi_422_fails() -> None:
 
     assert summary.passed == 0
     assert summary.results[0].passed is False
-    assert "expected classification fastapi_validation_error" in summary.results[0].notes[0]
-    assert diagnose(summary)[0].root_cause.startswith("The classifier selected the wrong bug category")
+    assert (
+        "expected classification fastapi_validation_error"
+        in summary.results[0].notes[0]
+    )
+    assert diagnose(summary)[0].root_cause.startswith(
+        "The classifier selected the wrong bug category"
+    )
 
 
 def test_fastapi_422_fix_passes() -> None:

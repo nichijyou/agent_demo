@@ -6,7 +6,10 @@
       "body": "The endpoint crashes with 'NoneType' object has no attribute 'email'."
     },
     "expected_classification": "none_handling",
-    "expected_contains": ["None guard", "optional values"]
+    "expected_contains": [
+      "None guard",
+      "optional values"
+    ]
   },
   {
     "id": "bounds_check_001",
@@ -15,7 +18,10 @@
       "body": "The parser raises list index out of range on empty rows."
     },
     "expected_classification": "bounds_check",
-    "expected_contains": ["length", "indexing"]
+    "expected_contains": [
+      "length",
+      "indexing"
+    ]
   },
   {
     "id": "performance-001",
@@ -24,7 +30,10 @@
       "body": "Rendering times out because the same aggregation repeats in a loop."
     },
     "expected_classification": "performance",
-    "expected_contains": ["Cache", "hot path"]
+    "expected_contains": [
+      "Cache",
+      "hot path"
+    ]
   },
   {
     "id": "fastapi_422",
@@ -33,6 +42,9 @@
       "body": "FastAPI returns 422 when I send a POST request with JSON."
     },
     "expected_classification": "fastapi_validation_error",
-    "expected_contains": ["validation", "schema"]
+    "expected_contains": [
+      "validation",
+      "schema"
+    ]
   }
 ]

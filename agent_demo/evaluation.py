@@ -42,8 +42,10 @@ def evaluate_dataset(cases: list[EvalCase], fix: bool = False) -> EvalSummary:
             passed_checks += 1
         else:
             notes.append(
-                f"expected classification {case.expected_classification}, "
-                f"got {agent_result.classification}"
+                (
+                    f"expected classification {case.expected_classification}, "
+                    f"got {agent_result.classification}"
+                )
             )
 
         for expected_text in case.expected_contains:

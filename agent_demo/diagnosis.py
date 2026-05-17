@@ -15,7 +15,9 @@ def diagnose(summary: EvalSummary) -> list[Diagnosis]:
         return [
             Diagnosis(
                 case_id="all",
-                root_cause="All eval cases passed. No immediate diagnosis needed.",
+                root_cause=(
+                    "All eval cases passed. No immediate diagnosis needed."
+                ),
                 evidence=[],
                 suggestion=[],
             )
@@ -51,7 +53,9 @@ def _diagnose_failure(case_id: str, trace: TraceNode, notes: list[str]) -> Diagn
 
     return Diagnosis(
         case_id=case_id,
-        root_cause="The agent output did not match the expected evaluation signals.",
+        root_cause=(
+            "The agent output did not match the expected evaluation signals."
+        ),
         evidence=notes,
         suggestion=["Inspect the trace tree and add a focused regression case."],
     )

@@ -32,7 +32,11 @@ def write_report(
     ]
     if failed:
         for result in failed:
-            lines.append(f"- {result.case_id}: score={result.score:.2f}; {'; '.join(result.notes)}")
+            lines.append(
+                f"- {result.case_id}: "
+                f"score={result.score:.2f}; "
+                f"{'; '.join(result.notes)}"
+            )
     else:
         lines.append("- None")
 

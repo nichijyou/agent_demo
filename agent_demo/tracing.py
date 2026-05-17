@@ -86,18 +86,26 @@ def save_trace(node: TraceNode, path: Path) -> None:
 
 
 def render_ascii_tree(node: TraceNode, prefix: str = "", is_last: bool = True) -> str:
-    connector = "" if node.parent_id is None else ("└── " if is_last else "├── ")
+    connector = ""
+    if node.parent_id is not None:
+        connector = "└── " if is_last else "├── "
+
     label = f"{node.name} [{node.kind}] {node.duration_ms:.1f}ms"
     summary = _output_summary(node.output)
+
     if summary:
         label = f"{label} -> {summary}"
     if node.error:
         label = f"{label} ERROR {node.error}"
 
     lines = [prefix + connector + label]
-    next_prefix = "" if node.parent_id is None else prefix + ("    " if is_last else "│   ")
+    next_prefix = ""
+    if node.parent_id is not None:
+        next_prefix = prefix + ("    " if is_last else "│   ")
+
     for index, child in enumerate(node.children):
         lines.append(render_ascii_tree(child, next_prefix, index == len(node.children) - 1))
+
     return "\n".join(lines)
 
 
