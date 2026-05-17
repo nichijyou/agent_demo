@@ -11,6 +11,7 @@
       "optional values"
     ]
   },
+
   {
     "id": "bounds_check_001",
     "bug_report": {
@@ -23,6 +24,7 @@
       "indexing"
     ]
   },
+
   {
     "id": "performance-001",
     "bug_report": {
@@ -35,6 +37,7 @@
       "hot path"
     ]
   },
+
   {
     "id": "fastapi_422",
     "bug_report": {

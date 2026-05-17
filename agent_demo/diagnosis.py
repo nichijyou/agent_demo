@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Trace-based failure diagnosis for evaluation results."""
+
 from agent_demo.models import Diagnosis, EvalSummary, TraceNode
 from agent_demo.tracing import find_span
 

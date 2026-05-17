@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Deterministic tools for Python bug triage examples."""
+
 
 def classify_bug_tool(title: str, body: str, fix: bool = False) -> str:
     text = f"{title} {body}".lower()

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Tiny trace span helpers used by the demo agent."""
+
 import json
 from contextlib import contextmanager
 from pathlib import Path

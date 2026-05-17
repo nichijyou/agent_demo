@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Command-line entry point for the deterministic PyCon demo."""
+
 import argparse
 from pathlib import Path
 

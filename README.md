@@ -6,6 +6,8 @@ This repository is a small PyCon demo for a deterministic Python bug triage
 agent. It uses no real LLM API, no API key, no LangChain, no LangGraph, no
 OpenTelemetry, no web UI, and no database.
 
+Source files are intentionally stored with normal physical line breaks.
+
 ## Demo Goal
 
 Show the core workflow for understanding an LLM-style application:

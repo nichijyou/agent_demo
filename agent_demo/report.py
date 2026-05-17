@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Markdown report writer for the PyCon demo."""
+
 from pathlib import Path
 
 from agent_demo.models import AgentResult, Diagnosis, EvalSummary

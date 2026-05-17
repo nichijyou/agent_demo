@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Dataset loading and evaluation for the demo agent."""
+
 import json
 from pathlib import Path
 

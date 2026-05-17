@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Dataclass models for the deterministic agent demo."""
+
 from dataclasses import dataclass, field
 from typing import Any
 

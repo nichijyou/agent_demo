@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""A mock LLM agent with deterministic tool calls."""
+
 from agent_demo.models import AgentResult, BugReport
 from agent_demo.tools import classify_bug_tool, search_known_issue_tool, suggest_fix_tool
 from agent_demo.tracing import Tracer

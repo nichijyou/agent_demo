@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Regression tests for the PyCon demo workflow."""
+
 from pathlib import Path
 
 from agent_demo.diagnosis import diagnose
